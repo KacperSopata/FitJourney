@@ -1,0 +1,32 @@
+﻿@model ApplicationForTrainingWEB.Application.ViewModels.ExerciseVm.ExerciseDetailVm
+
+@{
+    ViewBag.Title = "Szczegóły";
+    Layout = "_Layout";
+}
+
+<h2>Szczegóły</h2>
+
+<div class="exercise-details">
+    <div>
+        <th>Nazwa:</th>
+        @Html.DisplayFor(exercise => exercise.Name)
+    </div>
+    <div>
+        <th>Opis:</th>
+        @Html.DisplayFor(model => model.Description, new { @class = "form-control", rows = 4 })
+    </div>
+    <div>
+        <th>Instrukcja:</th>
+        @Html.DisplayFor(exercise => exercise.Instruction, new { @class = "form-control", rows = 4 })
+    </div>
+    <div>
+        <th>Zaangażowane partie::</th>
+        @Html.DisplayFor(exercise => exercise.InvolvedParties, new { @class = "form-control", rows = 4 })
+    </div>
+    <div>
+        <th>Wskazówki:</th>
+        @Html.DisplayFor(model => model.Tips, new { @class = "form-control", rows = 4 })
+
+    </div>
+</div>

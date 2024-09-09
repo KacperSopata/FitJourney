@@ -1,0 +1,73 @@
+﻿@model ApplicationForTrainingWEB.Application.ViewModels.PostVm.ListPost
+
+<h1>Baza wiedzy</h1>
+
+@if ((bool)ViewBag.IsAdmin)
+{
+    <p>
+        <a asp-action="AddPost">Stwórz nowy post</a>
+    </p>
+}
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Tytuł</th>
+                <th>Szczegóły</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var post in Model.Posts)
+            {
+                <tr>
+                    <td>
+                        @if (post.Image != null && post.Image.Length > 0)
+                        {
+                            <img src="data:image/jpeg;base64,@(Convert.ToBase64String(post.Image))" alt="Image" style="max-width: 200px; max-height: 200px;" />
+                        }
+                    </td>
+                    <td>@Html.DisplayFor(model => post.Title)</td>
+                    <td>
+                        @Html.ActionLink("Szczegóły", "Details", new { id = post.Id }, new { @class = "btn btn-info" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@* Paginacja *@
+<div class="row">
+    <table>
+        <tr>
+            @for (int i = 1; i <= Math.Ceiling(Model.Count / (double)Model.PageSize); i++)
+            {
+                <td>
+                    @if (i != Model.CurrentPage)
+                    {
+                        <a href="javascript:PagerClick(@i)">@i</a>
+                    }
+                    else
+                    {
+                        <span>@i</span>
+                    }
+                </td>
+            }
+        </tr>
+    </table>
+    <input type="hidden" name="pageNo" id="pageNo"></input>
+    <input type="hidden" name="pageSize" id="pageSize" value="10"></input>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        function PagerClick(index)
+        {
+            document.getElementById("pageNo").value = index;
+            document.forms[0].submit();
+        }
+    </script>
+}

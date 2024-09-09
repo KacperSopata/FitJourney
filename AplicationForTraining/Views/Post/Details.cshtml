@@ -1,0 +1,29 @@
+﻿@model ApplicationForTrainingWEB.Application.ViewModels.PostVm.PostDetailVm
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+
+<div class="post-details">
+    <div>
+        <td>
+            @if (Model.Image != null && Model.Image.Length > 0)
+            {
+                <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Image))"
+                     alt="Image"
+                     style="width: 100%; max-width: 600px; height: auto;" />
+            }
+        </td>
+    </div>
+    <div>
+        <h2> @Html.DisplayFor(model => model.Title)</h2>
+        @* @Html.DisplayFor(model => model.Title) *@
+    </div>
+    <div>
+        @* <th>Treść:</th> *@
+        @Html.DisplayFor(exercise => exercise.Content)
+    </div>
+
+</div>

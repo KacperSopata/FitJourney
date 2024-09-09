@@ -1,0 +1,35 @@
+﻿@model ApplicationForTrainingWEB.Application.ViewModels.WorkoutVm.NewWorkoutVm
+
+@{
+    ViewBag.Title = "Dodaj trening";
+    Layout = "_Layout";
+}
+
+<h2>Dodaj trening</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddWorkoutToDay">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" />
+            </div>
+            <input type="hidden" name="workoutData" value="@Model.StartWorkout" />
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Nazwa</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartWorkout" class="control-label">Data</label>
+                <input asp-for="StartWorkout" class="form-control" />
+                <span asp-validation-for="StartWorkout" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div>

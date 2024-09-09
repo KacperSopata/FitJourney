@@ -1,0 +1,50 @@
+﻿@model ApplicationForTrainingWEB.Application.ViewModels.UserMealVm.NewProductInUserInMealVm
+
+@{
+    ViewBag.Title = "Dodaj produkt do posiłku";
+    Layout = "_Layout";
+}
+
+
+
+<h2>Dodaj produkt do posiłku</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddProductToMeal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="mealId" value="@Model.MealId" />
+            <input type="hidden" name="productId" value="@Model.ProductId" />
+
+            <input type="hidden" name="Calories" id="Calories" />
+            <input type="hidden" name="Protein" id="Protein" />
+            <input type="hidden" name="Fat" id="Fat" />
+            <input type="hidden" name="Carbohydrates" id="Carbohydrates" />
+
+            <div class="form-group">
+                <label asp-for="Grammage" class="control-label">Gramatura</label>
+                <input asp-for="Grammage" class="form-control" />
+                <span asp-validation-for="Grammage" class="text-danger"></span>
+            </div>
+            <table>
+                <tr>
+                    <td>Wartości odżywcze na 100g:</td>
+                </tr>
+                <tr>
+                    <td>Wartość energetyczna (kcal): @Model.Calories</td>
+                </tr>
+                <tr>
+                    <td>Białko: @Model.Protein</td>
+                </tr>
+                <tr>
+                    <td>Tłuszcz: @Model.Fat</td>
+                </tr>
+                <tr>
+                    <td>Węglowodany: @Model.Carbohydrates</td>
+                </tr>
+            </table>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

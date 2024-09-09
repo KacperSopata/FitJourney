@@ -1,0 +1,76 @@
+﻿@using ApplicationForTrainingWEB.Domain.Model
+@using ApplicationForTrainingWEB.Application.ViewModels.StandardMealVm
+@model ApplicationForTrainingWEB.Application.ViewModels.WorkoutVm.WorkoutDetailVm
+
+@{
+    ViewBag.Title = "Dziennik treningowy";
+    Layout = "_Layout";
+}
+
+<h1>Dziennik treningowy</h1>
+
+<form id="workoutForm" asp-action="Index" asp-controller="Workout" method="get">
+    <div class="row">
+        <label for="workoutDayId">Wybierz datę:</label>
+        @{
+            string startDateValue = Model.StartWorkout != default(DateTime) ? Model.StartWorkout.ToString("yyyy-MM-dd") : "";
+        }
+        <input id="workoutDayId" name="selectedDate" type="date" value="@startDateValue" />
+        <button type="button" onclick="location.href='@Url.Action("AddWorkoutToDay", new { workoutData = startDateValue })'">Stwórz nowy trening</button>
+        <table>
+            <td>Rodzaj treningu: @Model.Description</td>
+            <td>Data: @startDateValue</td>                                           
+            @if (Model.Id != 0)
+            {
+                <button type="button" onclick="location.href='@Url.Action("AddExerciseToWorkout", new { workoutId = Model.Id })'">Dodaj ćwiczenie</button>
+            }
+        </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nazwa ćwiczenia</th>
+                    <th>Serie</th>
+                    <th>Powtórzenia</th>
+                    <th>Ciężar</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (Model.Exercises == null || !Model.Exercises.Any())
+                {
+                    <tr>
+                        <td colspan="3">Brak ćwiczeń</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var exercise in Model.Exercises)
+                    {
+                        <tr>
+                            <td>@exercise.Name</td>
+                            <td>@exercise.Sets</td>
+                            <td>@exercise.Reps</td>
+                            <td>@exercise.Weight</td>
+                            <td>
+                                @Html.ActionLink("Edytuj", "EditExercise2", new { workoutId = Model.Id })|
+                                @Html.ActionLink("Szczegóły", "Details", new { id = exercise.Id })|
+                                @Html.ActionLink("Usuń", "Delete", new { id = exercise.Id })
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+        @if (Model.Id != 0)
+        {
+            <button type="button" onclick="location.href='@Url.Action("DeleteWorkout", new { workoutId = Model.Id, workoutData = startDateValue })'">Usuń trening</button>
+        }
+    </div>
+</form>
+
+<script>
+    document.getElementById("workoutDayId").addEventListener("change", function () {
+        document.getElementById("workoutForm").submit();
+    });
+</script>
