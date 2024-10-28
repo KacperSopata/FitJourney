@@ -1,0 +1,136 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/images/BLACKGYM.png'); /* Ustawienie tła jako obraz */
+    background-size: cover; /* Pokrywa całe tło */
+    background-position: center; /* Wyśrodkowanie tła */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0); /* Ustawienie przezroczystości */
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    padding: 4rem; /* Zwiększenie paddingu */
+    width: 90%; /* Zwiększenie szerokości kontenera */
+    max-width: 700px; /* Zwiększenie maksymalnej szerokości kontenera */
+    backdrop-filter: blur(5px); /* Dodaje efekt rozmycia tła za kontenerem */
+}
+
+h1 {
+    margin-bottom: 2rem;
+    text-align: center; /* Wyśrodkowanie tytułu */
+    color: #000; /* Kolor tytułu - czarny */
+}
+
+.display-4 {
+    font-size: 3.5rem; /* Powiększenie tytułu */
+    font-weight: bold; /* Pogrubienie tekstu */
+    color: #fff; /* Kolor tytułu - biały */
+    text-align: center; /* Wyśrodkowanie tytułu */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Cień tekstu */
+}
+
+.form-floating .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1.5rem; /* Powiększenie tekstu w inputach */
+    padding: 1rem; /* Zwiększenie paddingu dla inputów */
+}
+
+.btn-black {
+    border-radius: 5px;
+    background-color: #000; /* Czarny kolor przycisków */
+    color: white; /* Biały tekst */
+    border: 1px solid #000; /* Czarna obramówka */
+    width: 100%; /* Ustawienie przycisku na 100% szerokości kontenera */
+    font-size: 1.5rem; /* Powiększenie tekstu przycisku */
+    margin-top: 1rem; /* Odstęp od innych elementów */
+    padding: 15px; /* Dodatkowe odstępy w przycisku */
+}
+
+.text-black {
+    color: #000; /* Czarny tekst */
+}
+
+a.text-black {
+    color: #000; /* Czarny kolor dla linku */
+    font-size: 2.5rem; /* Powiększenie napisu "Register as a new user" */
+    text-decoration: none; /* Brak podkreślenia */
+    display: block; /* Wyśrodkowanie poprzez blokowe wyświetlanie */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    margin-top: 1rem; /* Odstęp od przycisku */
+}
+.form-label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    transition: opacity 0.2s ease; /* Użyj opacity zamiast transformacji */
+    color: #aaa;
+    opacity: 1; /* Domyślnie widoczna */
+}
+
+.form-floating .form-control:focus ~ .form-label,
+.form-floating .form-control:not(:placeholder-shown) ~ .form-label {
+    opacity: 0; /* Ustaw opacity na 0, aby zniknęła */
+    pointer-events: none; /* Zapobiega interakcji z etykietą */
+}
+
+.form-check {
+    display: flex; /* Umożliwia elastyczne pozycjonowanie */
+    align-items: center; /* Wyrównanie checkboxa z etykietą w pionie */
+    margin-bottom: 1rem; /* Odstęp między checkboxami */
+}
+
+.form-check-input {
+    width: 4rem; /* Zwiększenie rozmiaru checkboxa */
+    height: 2rem; /* Zwiększenie wysokości checkboxa */
+    margin-right: 1rem; /* Odstęp między checkboxem a tekstem */
+}
+
+.form-check-label {
+    font-size: 1.5rem; /* Powiększenie tekstu etykiety */
+    color: white; /* Czarny kolor tekstu */
+}
+.text-white {
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Adds a shadow effect */
+}
+/* Styl podstawowy przycisku rejestracji */
+.btn-register {
+    border-radius: 5px; /* Zaokrąglone rogi */
+    background-color: #000; /* Czarny kolor tła */
+    color: white; /* Biały tekst */
+    border: 1px solid #000; /* Czarna obramówka */
+    width: 100%; /* Ustawienie przycisku na 100% szerokości kontenera */
+    font-size: 1.5rem; /* Powiększenie tekstu przycisku */
+    margin-top: 1rem; /* Odstęp od innych elementów */
+    padding: 15px; /* Dodatkowe odstępy w przycisku */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    text-decoration: none; /* Usunięcie podkreślenia */
+    display: inline-block; /* Umożliwienie ustalenia szerokości */
+}
+
+/* Dodatkowe stylizacje dla kontenera */
+.text-center {
+    margin: 0 auto; /* Wyśrodkowanie kontenera */
+    width: 100%; /* Opcjonalnie, aby kontener miał 100% szerokości */
+}
+
+/* Styl dla stanu hover */
+.btn-register:hover {
+    background-color: #000; /* Utrzymaj czarne tło */
+    color: white; /* Utrzymaj biały tekst */
+    border: 1px solid #000; /* Utrzymaj czarną obramówkę */
+    cursor: pointer; /* Wskaźnik ręki przy najechaniu */
+}
+
+

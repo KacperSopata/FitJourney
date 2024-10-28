@@ -1,0 +1,91 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Zapobiega przewijaniu poziomemu */
+}
+
+body {
+    background-image: url('/Images/GYM-Modern.jpg'); /* Ustawienie obrazu w tle */
+    background-size: cover;
+    background-position: center;
+    background-color: #051f35;
+    background-blend-mode: screen;
+}
+
+* {
+    font-family: Arial, Courier, monospace; /* Ujednolicony styl czcionki */
+    color: black; /* Zmiana koloru tekstu na czarny */
+    font-weight: bold; /* Pogrubienie tekstu */
+}
+
+.heading {
+    width: 100%; /* Ograniczenie szerokości do 80% */
+    max-width: 880px; /* Zwiększenie maksymalnej szerokości dla tekstu o 10% */
+    text-align: center;
+    padding: 22px; /* Dodanie odstępu wewnątrz kontenera o 10% więcej */
+    background-color: rgba(255, 255, 255, 0.8); /* Półprzezroczyste tło, aby tekst był lepiej widoczny */
+    border-radius: 10px;
+    position: absolute;
+}
+
+.heading-1 {
+    top: 15%;
+    left: 5%;
+}
+
+.heading-2 {
+    bottom: 5%;
+    right: 2%;
+    width: 55%; /* Zwiększona szerokość o 10% */
+    max-width: 1100px; /* Ustaw maksymalną szerokość o 10% większą */
+    height: auto; /* Automatyczna wysokość (dopasowuje się do zawartości) */
+    padding: 44px; /* Większe wcięcia wewnątrz dymka o 10% więcej */
+    background-color: rgba(255, 255, 255, 0.85); /* Utrzymanie półprzezroczystego tła */
+}
+
+.title {
+    font-size: 44px; /* Zwiększenie rozmiaru czcionki o 10% */
+    font-family: Arial, Courier, monospace;
+}
+
+/* Dodany styl dla tytułu z efektem powiększenia */
+.title-hover {
+    transition: transform 0.3s ease; /* Ustawiamy przejście dla transformacji */
+}
+
+    .title-hover:hover {
+        transform: scale(1.1); /* Powiększamy tytuł o 10% */
+    }
+
+.subtitle {
+    font-size: 22px; /* Zwiększenie rozmiaru czcionki o 10% */
+    font-family: Arial, Courier, monospace;
+    margin-bottom: 22px; /* Zwiększenie marginesu dolnego o 10% */
+    transition: transform 0.3s ease; /* Ustawiamy przejście dla transformacji */
+}
+
+    .subtitle:hover {
+        transform: scale(1.1); /* Powiększamy element o 10% */
+    }
+
+.register {
+    width: 198px; /* Zwiększenie szerokości o 10% */
+    height: 55px; /* Zwiększenie wysokości o 10% */
+    font-weight: bold;
+    font-family: Arial, Courier, monospace;
+    margin: 22px auto;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px solid black;
+    border-radius: 5px;
+    transition: background-color 1000ms, color 1000ms;
+    color: black;
+}
+
+    .register:hover {
+        background-color: black;
+        color: white;
+        transition: background-color 1000ms, color 1000ms;
+    }
+

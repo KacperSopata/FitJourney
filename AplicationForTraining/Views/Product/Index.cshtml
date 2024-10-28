@@ -1,0 +1,72 @@
+﻿@model ApplicationForTrainingWEB.Application.ViewModels.ProductVm.ListProductForListVM
+
+@{
+    ViewBag.Title = "Product database";
+    Layout = "_Layout";
+}
+
+<h1>Product database</h1>
+
+<p>
+    <a class ="btn-details" asp-action="AddProduct">Stwórz nowy produkt</a>
+</p>
+
+<form asp-action="Index" asp-controller="Product" method="post">
+    <div class="row">
+        <input type="text" asp-for="SearchString" name="searchString" id="searchString" />
+        <input type="submit" value="Wyszukaj" />
+    </div>
+</form>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.Products)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelProduct => product.Name)
+                        </td>
+                        <td>
+                            @if ((bool)ViewBag.IsAdmin || product.UserId == (string)ViewBag.UserId)
+                            {
+                                @Html.ActionLink("Edit", "EditProduct", new { id = product.Id })
+                            }
+                        <a class="btn-details" asp-action="Details" asp-route-id="@product.Id">Details</a>   
+                        @if ((bool)ViewBag.IsAdmin || product.UserId == (string)ViewBag.UserId)
+                        {
+                                @Html.ActionLink("Delete", "Delete", new { id = product.Id })
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+@if (Model.Count > Model.PageSize)
+{
+    <nav aria-label="Paginacja">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= (Model.Count + Model.PageSize - 1) / Model.PageSize; i++)
+            {
+                <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                    @if (i != Model.CurrentPage)
+                    {
+                        <a class="btn-details" asp-action="Index" asp-route-pageNo="@i" asp-route-searchString="@Model.SearchString">@i</a>
+                    }
+                    else
+                    {
+                        <span class="btn-details" style="pointer-events: none;">@i</span>
+                    }
+                </li>
+            }
+        </ul>
+    </nav>
+}

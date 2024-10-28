@@ -1,0 +1,18 @@
+﻿using ApplicationForTrainingWEB.Application.ViewModels.ReadyRecipesVm;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ApplicationForTrainingWEB.Application.ViewModels.ReadyPlanWorkoutVm
+{
+    public class ListReadyPlanWorkoutVm
+    {
+        public List<ReadyPlanWorkoutForListVm> ReadyPlanWorkouts { get; set; } // Lista planów treningowych
+        public int CurrentPage { get; set; } // Aktualna strona dla paginacji
+        public int PageSize { get; set; } // Ilość elementów na stronie
+        public string SearchString { get; set; } // Wyszukiwane hasło
+        public int Count { get; set; } // Łączna liczba planów
+    }
+}

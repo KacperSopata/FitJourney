@@ -1,0 +1,235 @@
+﻿/* Ogólny styl dla body */
+body {
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9); /* Biały do bardzo jasnoszarego */
+    margin: 0;
+    font-family: Arial, sans-serif; /* Domyślna czcionka */
+}
+
+/* Styl dla głównych kontenerów */
+.container_main {
+    max-width: 1200px; /* Maksymalna szerokość kontenera */
+    margin: 20px auto; /* Margines auto z góry i dołu */
+    padding: 20px; /* Padding wewnętrzny */
+}
+.container {
+    max-width: 1200px; /* Maksymalna szerokość kontenera */
+    margin: 20px auto; /* Margines auto z góry i dołu */
+    padding: 20px; /* Padding wewnętrzny */
+    background-color: rgba(255, 255, 255, 0.9); /* Białe tło z lekka przezroczystością */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+/* Styl dla sekcji */
+.section {
+    border: 2px solid #ccc; /* Szara ramka */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    padding: 20px; /* Padding wewnętrzny dla sekcji */
+    margin-bottom: 20px; /* Margines dolny między sekcjami */
+    background-color: white; /* Białe tło dla sekcji */
+}
+
+    /* Styl dla nagłówków w sekcjach */
+    .section h2 {
+        font-size: 24px; /* Rozmiar czcionki nagłówka */
+        color: #333; /* Kolor tekstu */
+        margin-bottom: 10px; /* Margines dolny */
+    }
+
+/* Styl dla opisów */
+.subtitle {
+    font-size: 16px; /* Rozmiar czcionki dla opisów */
+    color: #666; /* Kolor tekstu dla opisów */
+}
+
+/* Styl dla formularzy */
+.form-control {
+    border: 2px solid #000000; /* Czarna ramka */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    padding: 10px; /* Wewnętrzny padding */
+    font-size: 16px; /* Powiększenie tekstu */
+    transition: border-color 0.3s; /* Płynna zmiana koloru ramki */
+}
+
+    .form-control:focus {
+        border-color: #0056b3; /* Zmiana koloru ramki na ciemniejszy niebieski podczas fokusu */
+        outline: none; /* Usunięcie domyślnego konturu */
+    }
+
+/* Styl dla przycisków */
+.btn-black {
+    background-color: white; /* Białe tło */
+    color: black; /* Czarny kolor tekstu */
+    border: 2px solid black; /* Czarny obwód */
+    padding: 10px 20px; /* Padding wewnętrzny */
+    font-size: 16px; /* Rozmiar czcionki */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor wskazujący */
+    transition: background-color 0.3s, color 0.3s; /* Płynna zmiana koloru tła i tekstu */
+}
+
+    .btn-black:hover {
+        background-color: black; /* Czarny kolor tła przy najechaniu */
+        color: white; /* Biały kolor tekstu przy najechaniu */
+    }
+
+/* Styl dla tabel */
+table {
+    width: 100%; /* Tabela zajmująca 100% szerokości */
+    border-collapse: collapse; /* Usunięcie odstępów między komórkami */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Szara ramka dla komórek */
+    padding: 12px; /* Padding wewnętrzny w komórkach */
+    text-align: left; /* Wyrównanie tekstu do lewej */
+}
+
+th {
+    background-color: #f2f2f2; /* Jasnoszare tło dla nagłówków tabeli */
+    font-weight: bold; /* Pogrubienie czcionki nagłówków */
+}
+
+/* Styl dla przycisków w tabelach */
+.btn-table {
+    background-color: white; /* Białe tło */
+    color: black; /* Czarny kolor tekstu */
+    border: 2px solid black; /* Czarny obwód */
+    padding: 5px 10px; /* Padding wewnętrzny */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor wskazujący */
+    transition: background-color 0.3s, color 0.3s; /* Płynna zmiana koloru tła i tekstu */
+}
+
+    .btn-table:hover {
+        background-color: black; /* Czarny kolor tła przy najechaniu */
+        color: white; /* Biały kolor tekstu przy najechaniu */
+    }
+
+/* Dla mniejszych ekranów (smartfony) */
+/*@media (max-width: 576px) {
+    body {
+        font-size: 14px;*/ /* Zmniejsz rozmiar czcionki */
+    /*}
+
+    .container {
+        padding: 10px;*/ /* Mniejszy padding */
+    /*}
+
+    .form-control {
+        font-size: 14px;*/ /* Mniejszy rozmiar czcionki dla formularzy */
+    /*}
+
+    .btn-black, .btn-table {
+        padding: 8px 16px;*/ /* Mniejsze paddingi dla przycisków */
+        /*font-size: 14px;*/ /* Mniejszy rozmiar czcionki */
+    /*}
+
+    th, td {
+        padding: 8px;*/ /* Mniejszy padding dla komórek tabeli */
+    /*}
+}*/
+
+/* Dla średnich ekranów (tablety) */
+/*@media (min-width: 577px) and (max-width: 768px) {
+    body {
+        font-size: 16px;*/ /* Zwiększ rozmiar czcionki */
+    /*}
+}*/
+
+.btn btn-primary {
+    background-color: white; /* Białe tło */
+    color: black; /* Czarny kolor tekstu */
+    border: 2px solid black; /* Czarny obwód */
+    padding: 5px 10px; /* Padding wewnętrzny */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor wskazujący */
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.post-details {
+    padding: 20px; /* Padding wewnętrzny dla większej przestrzeni */
+    margin: 20px auto; /* Margines z góry i dołu, centrowanie */
+    max-width: 1040px; /* Zwiększona maksymalna szerokość (800px * 1.3 ≈ 1040px) */
+    border: 1px solid #ccc; /* Szara ramka */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    background-color: rgba(255, 255, 255, 0.95); /* Białe tło z lekka przezroczystością */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+    /* Styl dla nagłówka tytułu */
+    .post-details h2 {
+        font-size: 36px; /* Zwiększony rozmiar czcionki dla tytułu (28px * 1.3) */
+        color: #333; /* Kolor tekstu */
+        margin-bottom: 15px; /* Margines dolny */
+    }
+
+    /* Styl dla treści posta */
+    .post-details p {
+        font-size: 23px; /* Zwiększony rozmiar tekstu (18px * 1.3) */
+        color: #555; /* Kolor tekstu dla treści */
+        line-height: 1.6; /* Zwiększenie odstępu między wierszami */
+        margin-bottom: 20px; /* Margines dolny dla lepszej czytelności */
+    }
+
+    /* Styl dla obrazków w sekcji szczegółów */
+    .post-details img {
+        max-width: 110%; /* Zwiększona maksymalna szerokość (lub więcej, np. 120%) */
+        height: auto; /* Zachowuje proporcje */
+        border-radius: 5px; /* Zaokrąglone rogi dla obrazków */
+        margin-bottom: 20px; /* Margines dolny dla obrazków */
+        display: block; /* Umożliwia centrowanie obrazka */
+        margin-left: auto; /* Centrowanie obrazka */
+        margin-right: auto; /* Centrowanie obrazka */
+    }
+.btn-details {
+    background-color: white; /* Białe tło */
+    color: black; /* Czarny kolor tekstu */
+    border: 2px solid black; /* Czarny obwód */
+    padding: 10px 15px; /* Padding wewnętrzny */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor wskazujący */
+    transition: background-color 0.3s, color 0.3s; /* Płynna zmiana koloru tła i tekstu */
+}
+
+    .btn-details:hover {
+        background-color: black; /* Czarny kolor tła przy najechaniu */
+        color: white; /* Biały kolor tekstu przy najechaniu */
+    }
+
+.exercise-details {
+    padding: 20px; /* Padding wewnętrzny dla większej przestrzeni */
+    margin: 20px auto; /* Margines z góry i dołu, centrowanie */
+    max-width: 1040px; /* Zwiększona maksymalna szerokość */
+    border: 1px solid #ccc; /* Szara ramka */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    background-color: rgba(255, 255, 255, 0.95); /* Białe tło z lekka przezroczystością */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+    /* Styl dla nagłówka tytułu */
+    .exercise-details h2 {
+        font-size: 36px; /* Zwiększony rozmiar czcionki dla tytułu */
+        color: #333; /* Kolor tekstu */
+        margin-bottom: 15px; /* Margines dolny */
+    }
+
+    /* Styl dla treści ćwiczeń */
+    .exercise-details div {
+        font-size: 23px; /* Zwiększony rozmiar tekstu */
+        color: #555; /* Kolor tekstu dla treści */
+        line-height: 1.6; /* Zwiększenie odstępu między wierszami */
+        margin-bottom: 20px; /* Margines dolny dla lepszej czytelności */
+    }
+
+    .exercise-details strong {
+        font-weight: bold; /* Wytłuszczenie tekstu */
+        color: #333; /* Kolor tekstu dla etykiet */
+        display: inline-block; /* Umożliwia wyśrodkowanie etykiet */
+        margin-bottom: 5px; /* Margines dolny dla etykiet */
+    }
+
+    /* Opcjonalnie, możesz dodać styl dla całej sekcji */
+    .exercise-details div {
+        margin-bottom: 20px; /* Margines dolny dla treści */
+    }

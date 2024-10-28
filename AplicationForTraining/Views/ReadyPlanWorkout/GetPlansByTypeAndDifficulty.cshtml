@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ApplicationForTrainingWEB.Application.ViewModels.ReadyPlanWorkoutVm.ReadyPlanWorkoutForListVm>
+
+<h2>Workout Search Results:</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Plan Type</th>
+                <th>Difficulty</th>
+                <th>Description</th>
+                <th>Plan Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var plan in Model)
+            {
+                <tr>
+                    <td>@plan.PlanType</td>
+                    <td>@plan.Difficulty</td>
+                    <td>@plan.Description</td>
+                    <td>@plan.PlanDetails</td>
+                
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No results for selected criteria.</p>
+}
